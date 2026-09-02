@@ -1,16 +1,77 @@
 <!DOCTYPE html>
 <html lang="de">
+
 <head>
     <title>Verwaltungssystem</title>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="src/styles/main.css">
 </head>
+
 <body>
     <header>
-        <h1>Verwaltungssystem</h1>
+        <a>
+            <!-- <img src="" alt="Logo" width="100"> -->
+            <span href="#">Vorgangsportal</span>
+        </a>
+        <nav>
+            <a href="#">Hilfe</a>
+            <a href="#">Kontakt</a>
+        </nav>
     </header>
-    <p>Dies ist eine einfache Implementierung eines Verwaltungssystems.</p>
-<script type="module" src="src/scripts/main.ts"></script>
+
+    <main>
+        <section class="welcome-section">
+            <h1>Willkommen im Verwaltungssystem</h1>
+            <p>
+                Anträge stellen, Dokumente nachreichen
+                und Vorgänge einfach verfolgen
+            </p>
+        </section>
+        <section>
+            <article class="action-card">
+                <div class="card-content">
+                    <h2>Antrag stellen</h2>
+                    <p class="card-subtitle">Einen neuen Vorgang starten</p>
+                    <p class="card-description">Stellen Sie einen neuen Antrag und reichen Sie die erforderlichen
+                        Angaben direkt online ein.
+                        Wählen Sie beispielsweise zwischen einer [Antragsart A], [Antragsart B] oder [Antragsart C].</p>
+                </div>
+                <a href="#" class="card-button">Antrag stellen</a>
+            </article>
+            <article class="action-card">
+                <div class="card-content">
+                    <h2>Dokumente nachreichen</h2>
+                    <p class="card-subtitle">Bestehende Vorgänge ergänzen</p>
+                    <p class="card-description">Reichen Sie zusätzliche Unterlagen zu einem bestehenden Vorgang nach,
+                        beispielsweise angeforderte Nachweise oder fehlende Dokumente.</p>
+                </div>
+                <a href="#" class="card-button">Dokumente hochladen</a>
+            </article>
+            <article class="tracking-card">
+                <div class="card-content">
+                    <h2>Vorgang verfolgen</h2>
+                    <p class="card-subtitle">Aktuellen Bearbeitungsstand abrufen</p>
+                    <p class="card-description">Geben Sie Ihre Vorgangsnummer ein, um den aktuellen Status und die zu
+                        Ihrem Vorgang eingereichten Dokumente einzusehen.</p>
+                </div>
+                <form class="tracking-form">
+                    <label for="case-number">Vorgangsnummer:</label>
+                    <input type="text" id="case-number" name="case-number" placeholder="z. B. VG-2026-001284">
+                    <button type="submit">Status anzeigen</button>
+                </form>
+            </article>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2026 Verwaltungssystem. Alle Rechte vorbehalten.</p>
+        <nav class="footer-nav">
+            <a href="#">Impressum</a>
+            <a href="#">Datenschutz</a>
+        </nav>
+    </footer>
+    <script type="module" src="src/scripts/main.ts"></script>
 </body>
+
 </html>
