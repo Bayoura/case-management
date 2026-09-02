@@ -1,0 +1,27 @@
+{
+  "name": "case-management",
+  "version": "1.0.0",
+  "description": "A web-based case management system for managing requests, tracking case status, and improving service transparency.",
+  "main": "index.js",
+  "scripts": {
+    "dev": "vite --open",
+    "build": "tsc && vite build",
+    "preview": "vite preview"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Bayoura/case-management.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/Bayoura/case-management/issues"
+  },
+  "homepage": "https://github.com/Bayoura/case-management#readme",
+  "devDependencies": {
+    "typescript": "^7.0.2",
+    "vite": "^8.2.2"
+  }
+}

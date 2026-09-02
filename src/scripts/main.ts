@@ -1,0 +1,1 @@
+console.log("Case Management System is running!");
