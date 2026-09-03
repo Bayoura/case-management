@@ -3,3 +3,136 @@
     padding: 0;
     box-sizing: border-box;
 }
+
+body {
+    min-height: 100vh;
+    font-family: Inter, sans-serif;
+    line-height: 1.2;
+    display: flex;
+    /* Creates a vertical layout so the footer can stay at the bottom */
+    flex-direction: column;
+}
+
+
+/*--------------------------------------------------- HEADER --------------------------------------------- */
+
+
+header {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    background-color: rgb(106, 138, 106);
+    padding: 24px 60px;
+}
+
+header nav {
+    display: flex;
+    gap: 32px;
+}
+
+/*--------------------------------------------------- MAIN ------------------------------------------------- */
+
+main {
+    padding: 2rem 1rem;
+    width: 100%;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: 3rem;
+    /* Fills remaining space and pushes the footer to the bottom */
+    flex: 1;
+}
+
+/* -------------------------------------------------WELCOME SECTION --------------------------------------------- */
+
+
+.welcome-section {
+    text-align: center;
+}
+
+.welcome-section h1 {
+    margin-bottom: 1rem;
+}
+
+/* -------------------------------------------------ACTION SECTION --------------------------------------------- */
+
+.action-section {
+    display: grid;
+    /* This creates two columns that are equally sized */
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2rem;
+}
+
+/* -------------------------------------------- CARDS ----------------------------------------------------------- */
+
+.action-card,
+.tracking-card {
+    border: 1px solid #ccc;
+    min-height: 240px;
+    padding: 1rem 2rem;
+    border-radius: 4px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.action-card,
+.card-button {
+    margin-top: auto;
+}
+
+.card-subtitle {
+    font-size: 0.9rem;
+    color: #666;
+    margin-bottom: 1rem;
+}
+
+.card-button {
+    text-decoration: none;
+    padding: 0.5rem 1rem;
+    background-color: rgb(169, 169, 169);
+    color: black;
+    border: 1px solid black;
+    border-radius: 4px;
+    align-self: flex-start;
+
+}
+
+/* -------------------------------------------------TRACKING FORM --------------------------------------------- */
+
+.tracking-form {
+    display: flex;
+    flex-direction: column;
+    margin-top: 1rem;
+}
+
+
+#case-number {
+    padding: 0.5rem;
+    margin-top: 0.5rem;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+button {
+    margin-top: 2rem;
+    align-self: flex-start;
+    padding: 0.5rem 1rem;
+}
+
+/* -------------------------------------------------FOOTER --------------------------------------------- */
+
+footer {
+    display: flex;
+    justify-content: space-between;
+    gap: 2rem;
+    margin-top: 20px;
+    padding: 0.5rem 2rem;
+    background-color: #f1f1f1;
+}
+
+.footer-nav {
+    display: flex;
+    gap: 32px;
+}
