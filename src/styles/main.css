@@ -123,9 +123,72 @@ h2 {
 }
 
 button {
-  margin-top: 2rem;
-  align-self: flex-start;
-  padding: 0.5rem 1rem;
+  padding: 12px 24px;
+
+  border: none;
+  border-radius: 6px;
+
+  cursor: pointer;
+  font: inherit;
+}
+
+/* ---------------------------------------------- DATA CHANGE FORM ---------------------------------------- */
+
+.data-change-form {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  max-width: 800px;
+}
+
+.form-section {
+  border: 1px solid #ccc;
+}
+
+.form-section h2 {
+  margin-bottom: 1rem;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  margin-bottom: 1rem;
+}
+
+.form-group input,
+.form-group textarea,
+.form-group select {
+  width: 100%;
+  padding: 0.5rem;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font: inherit;
+}
+
+.form-group textarea {
+  resize: vertical;
+}
+
+.form-group label {
+  font-weight: bold;
+}
+
+.form-group label span {
+  font-weight: normal;
+  color: #666;
+}
+
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus {
+  outline: none;
+  border-color: #555;
+}
+
+.form-actions {
+  display: flex;
+  justify-content: flex-end;
 }
 
 /* -------------------------------------------------FOOTER --------------------------------------------- */
