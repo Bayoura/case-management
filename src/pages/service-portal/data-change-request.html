@@ -1,0 +1,124 @@
+<!doctype html>
+<html lang="de">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="/src/styles/main.css" />
+    <title>Stammdatenänderung</title>
+  </head>
+  <body>
+    <main>
+      <a href="new-application.html">Zurück zur Auswahl</a>
+      <section class="welcome-section">
+        <h1>Stammdatenänderung</h1>
+        <p>Wählen Sie, welche Ihrer Daten geändert werden sollen</p>
+      </section>
+      <form class="data-change-form" action="#" method="post">
+        <section class="form-section">
+          <h2>Angaben zur Person</h2>
+
+          <div class="form-group">
+            <label for="first-name">Vorname</label>
+
+            <textarea
+              id="first-name"
+              name="first-name"
+              rows="1"
+              required
+            ></textarea>
+          </div>
+
+          <div class="form-group">
+            <label for="last-name">Nachname</label>
+
+            <textarea
+              id="last-name"
+              name="last-name"
+              rows="1"
+              required
+            ></textarea>
+          </div>
+
+          <div class="form-group">
+            <label for="birthdate"> Geburtsdatum </label>
+            <input type="date" id="birthdate" name="birthdate" required />
+          </div>
+
+          <div class="form-group">
+            <label for="email">E-Mail-Adresse</label>
+
+            <input type="email" id="email" name="email" required />
+          </div>
+
+          <div class="form-group">
+            <label for="customer-number">
+              Kunden- oder Mitgliedsnummer <span>(optional)</span>
+            </label>
+
+            <input type="text" id="customer-number" name="customer-number" />
+          </div>
+        </section>
+
+        <section class="form-section">
+          <h2>Art der Änderung</h2>
+
+          <div class="form-group">
+            <label for="change-type"> Welche Daten möchten Sie ändern? </label>
+
+            <select id="change-type" name="change-type" required>
+              <option value="" selected disabled>Bitte auswählen</option>
+
+              <option value="address">Adresse</option>
+              <option value="contact">Kontaktdaten</option>
+              <option value="bank">Bankverbindung</option>
+              <option value="other">Sonstige Daten</option>
+            </select>
+          </div>
+        </section>
+
+        <section class="form-section">
+          <h2>Angaben zur Änderung</h2>
+
+          <div class="form-group">
+            <label for="current-value">Bisherige Angabe</label>
+
+            <textarea
+              id="current-value"
+              name="current-value"
+              rows="4"
+              required
+            ></textarea>
+          </div>
+
+          <div class="form-group">
+            <label for="new-value">Neue Angabe</label>
+
+            <textarea
+              id="new-value"
+              name="new-value"
+              rows="4"
+              required
+            ></textarea>
+          </div>
+        </section>
+
+        <section class="form-section">
+          <h2>Zusätzliche Angaben</h2>
+
+          <div class="form-group">
+            <label for="valid-from">
+              Gewünschte Gültigkeit ab <span>(optional)</span>
+            </label>
+
+            <input type="date" id="valid-from" name="valid-from" />
+          </div>
+        </section>
+
+        <div class="form-actions">
+          <button type="submit">Abschicken</button>
+        </div>
+      </form>
+    </main>
+    <script type="module" src="/src/scripts/main.ts"></script>
+  </body>
+</html>
