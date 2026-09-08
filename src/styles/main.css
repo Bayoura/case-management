@@ -61,12 +61,16 @@ main {
   gap: 2rem;
 }
 
+.application-types-section {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2rem;
+}
+
 /* -------------------------------------------- CARDS ----------------------------------------------------------- */
 
-.action-card,
-.tracking-card {
+.card {
   border: 1px solid #ccc;
-  min-height: 240px;
   padding: 1rem 2rem;
   border-radius: 4px;
   display: flex;
@@ -75,8 +79,16 @@ main {
 }
 
 .action-card,
-.card-button {
-  margin-top: auto;
+.tracking-card {
+  min-height: 240px;
+}
+
+.application-card {
+  min-height: 200px;
+}
+
+h2 {
+  margin-bottom: 0.5rem;
 }
 
 .card-subtitle {
