@@ -1,3 +1,5 @@
+/*--------------------------------------------------- GLOBAL --------------------------------------------- */
+
 * {
   margin: 0;
   padding: 0;
@@ -11,6 +13,18 @@ body {
   display: flex;
   /* Creates a vertical layout so the footer can stay at the bottom */
   flex-direction: column;
+}
+
+h2 {
+  margin-bottom: 0.5rem;
+}
+
+button {
+  padding: 12px 24px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font: inherit;
 }
 
 /*--------------------------------------------------- HEADER --------------------------------------------- */
@@ -42,7 +56,7 @@ main {
   flex: 1;
 }
 
-/* -------------------------------------------------WELCOME SECTION --------------------------------------------- */
+/* ------------------------------------------------- SECTIONS --------------------------------------------- */
 
 .welcome-section {
   text-align: center;
@@ -51,8 +65,6 @@ main {
 .welcome-section h1 {
   margin-bottom: 1rem;
 }
-
-/* -------------------------------------------------ACTION SECTION --------------------------------------------- */
 
 .action-section {
   display: grid;
@@ -67,7 +79,7 @@ main {
   gap: 2rem;
 }
 
-/* -------------------------------------------- CARDS ----------------------------------------------------------- */
+/* -------------------------------------------------- CARDS ----------------------------------------------------------- */
 
 .card {
   border: 1px solid #ccc;
@@ -85,10 +97,6 @@ main {
 
 .application-card {
   min-height: 200px;
-}
-
-h2 {
-  margin-bottom: 0.5rem;
 }
 
 .card-subtitle {
@@ -122,27 +130,38 @@ h2 {
   border-radius: 4px;
 }
 
-button {
-  padding: 12px 24px;
-
-  border: none;
-  border-radius: 6px;
-
-  cursor: pointer;
-  font: inherit;
+.tracking-form button {
+  margin-top: 1rem;
+  align-self: flex-start;
 }
 
 /* ---------------------------------------------- DATA CHANGE FORM ---------------------------------------- */
 
 .data-change-form {
-  display: flex;
-  flex-direction: column;
-  gap: 2rem;
-  max-width: 800px;
+  /* display: flex;
+  flex-direction: column; */
+  margin: 0 auto;
+  width: 100%;
+  max-width: 1500px;
 }
 
-.form-section {
-  border: 1px solid #ccc;
+.form-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 5rem;
+}
+
+@media (max-width: 768px) {
+  .form-grid {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+}
+
+.form-column {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
 }
 
 .form-section h2 {
@@ -189,6 +208,7 @@ button {
 .form-actions {
   display: flex;
   justify-content: flex-end;
+  margin-top: 2rem;
 }
 
 /* -------------------------------------------------FOOTER --------------------------------------------- */
