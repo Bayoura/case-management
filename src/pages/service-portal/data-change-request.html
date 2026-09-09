@@ -13,7 +13,12 @@
         <h1>Stammdatenänderung</h1>
         <p>Wählen Sie, welche Ihrer Daten geändert werden sollen</p>
       </section>
-      <form class="data-change-form" action="#" method="post">
+      <form
+        class="data-change-form"
+        action="#"
+        method="post"
+        enctype="multipart/form-data"
+      >
         <div class="form-grid">
           <div class="form-column">
             <section class="form-section">
@@ -96,6 +101,26 @@
                   required
                 ></textarea>
               </div>
+            </section>
+
+            <section class="form-section">
+              <h2>Dokumente und Nachweise</h2>
+
+              <div class="form-group">
+                <label for="attachments"> Fotos oder Dokumente </label>
+
+                <input
+                  type="file"
+                  id="attachments"
+                  name="attachments"
+                  multiple
+                />
+              </div>
+
+              <p class="form-hint">
+                Sie können Fotos oder andere relevante Dokumente für Ihren
+                Antrag hochladen.
+              </p>
             </section>
 
             <section class="form-section">
