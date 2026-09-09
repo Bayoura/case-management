@@ -1,0 +1,110 @@
+<!doctype html>
+<html lang="de">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="/src/styles/main.css" />
+
+    <title>Schadens- oder Mängelmeldung</title>
+  </head>
+
+  <body>
+    <main>
+      <a href="new-application.html">Zurück zur Auswahl</a>
+
+      <section class="welcome-section">
+        <h1>Schadens- oder Mängelmeldung</h1>
+        <p>
+          Melden Sie einen Schaden oder Mangel und übermitteln Sie alle
+          relevanten Informationen.
+        </p>
+      </section>
+
+      <form
+        class="application-form damage-report-form"
+        action="#"
+        method="post"
+        enctype="multipart/form-data"
+      >
+        <div class="form-grid">
+          <div id="person-form-container"></div>
+
+          <section class="form-section">
+            <h2>Angaben zum Schaden oder Mangel</h2>
+
+            <div class="form-group">
+              <label for="damage-category"> Kategorie </label>
+
+              <select id="damage-category" name="damage-category" required>
+                <option value="" selected disabled>Bitte auswählen</option>
+
+                <option value="damage">Schaden</option>
+                <option value="defect">Mangel oder Defekt</option>
+                <option value="property">Beschädigung von Eigentum</option>
+                <option value="other">Sonstiges</option>
+              </select>
+            </div>
+
+            <div class="form-group">
+              <label for="affected-item">
+                Betroffener Gegenstand oder Ort
+              </label>
+
+              <input
+                type="text"
+                id="affected-item"
+                name="affected-item"
+                required
+              />
+            </div>
+
+            <div class="form-group">
+              <label for="incident-date"> Datum der Feststellung </label>
+
+              <input
+                type="date"
+                id="incident-date"
+                name="incident-date"
+                required
+              />
+            </div>
+
+            <div class="form-group">
+              <label for="description"> Beschreibung </label>
+
+              <textarea
+                id="description"
+                name="description"
+                rows="6"
+                required
+              ></textarea>
+            </div>
+          </section>
+        </div>
+
+        <section class="form-section documents-section">
+          <h2>Dokumente und Nachweise</h2>
+
+          <div class="form-group">
+            <label for="attachments">
+              Fotos oder Dokumente <span>(optional)</span>
+            </label>
+
+            <input type="file" id="attachments" name="attachments" multiple />
+          </div>
+
+          <p class="form-hint">
+            Sie können Fotos oder andere relevante Dokumente zur Unterstützung
+            Ihrer Meldung hochladen.
+          </p>
+        </section>
+
+        <div class="form-actions">
+          <button type="submit">Abschicken</button>
+        </div>
+      </form>
+    </main>
+
+    <script type="module" src="/src/scripts/main.ts"></script>
+  </body>
+</html>
