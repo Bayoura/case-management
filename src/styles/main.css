@@ -135,11 +135,9 @@ main {
   align-self: flex-start;
 }
 
-/* ---------------------------------------------- DATA CHANGE FORM ---------------------------------------- */
+/* ---------------------------------------------- APPLICATION FORMS ---------------------------------------- */
 
-.data-change-form {
-  /* display: flex;
-  flex-direction: column; */
+.application-form {
   margin: 0 auto;
   width: 100%;
   max-width: 1500px;
@@ -210,6 +208,16 @@ main {
   justify-content: flex-end;
   margin-top: 2rem;
 }
+
+.documents-section {
+  margin-top: 2rem;
+  padding-top: 2rem;
+  border-top: 1px solid #ddd;
+}
+
+/* .documents-section .form-group input {
+  max-width: 728px;
+} */
 
 /* -------------------------------------------------FOOTER --------------------------------------------- */
 
