@@ -1,0 +1,77 @@
+<!doctype html>
+<html lang="de">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="/src/styles/main.css" />
+
+    <title>Allgemeine Anfrage</title>
+  </head>
+
+  <body>
+    <main>
+      <a href="new-application.html">Zurück zur Auswahl</a>
+
+      <section class="welcome-section">
+        <h1>Allgemeine Anfrage</h1>
+        <p>Stellen Sie eine allgemeine Anfrage.</p>
+      </section>
+
+      <form
+        class="application-form general-inquiry-form"
+        action="#"
+        method="post"
+        enctype="multipart/form-data"
+      >
+        <div class="form-grid">
+          <div id="person-form-container"></div>
+
+          <section class="form-section">
+            <h2>Angaben zur Anfrage</h2>
+
+            <div class="form-group">
+              <label for="subject">Betreff</label>
+
+              <input type="text" id="subject" name="subject" required />
+            </div>
+
+            <div class="form-group">
+              <label for="related-case-number">
+                Bestehende Vorgangsnummer <span>(optional)</span>
+              </label>
+
+              <input
+                type="text"
+                id="related-case-number"
+                name="related-case-number"
+                placeholder="z. B. VG-2026-001284"
+              />
+
+              <p class="form-hint">
+                Falls sich Ihre Anfrage auf einen bereits bestehenden Vorgang
+                bezieht, können Sie hier dessen Vorgangsnummer angeben.
+              </p>
+            </div>
+
+            <div class="form-group">
+              <label for="inquiry"> Ihr Anliegen </label>
+
+              <textarea
+                id="inquiry"
+                name="inquiry"
+                rows="8"
+                required
+              ></textarea>
+            </div>
+          </section>
+        </div>
+
+        <div class="form-actions">
+          <button type="submit">Abschicken</button>
+        </div>
+      </form>
+    </main>
+
+    <script type="module" src="/src/scripts/main.ts"></script>
+  </body>
+</html>
