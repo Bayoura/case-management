@@ -135,6 +135,90 @@ main {
   align-self: flex-start;
 }
 
+/* ---------------------------------------- DOCUMENT UPLOAD ---------------------------------------------- */
+
+.content {
+  max-width: 1100px;
+  width: 100%;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 3rem;
+}
+
+.case-summary {
+  padding: 1.5rem;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  background-color: #f8f8f8;
+}
+
+.case-summary h2,
+.document-list h2,
+.selected-documents h2,
+.upload-section h2 {
+  margin-bottom: 1rem;
+}
+
+.case-summary p {
+  margin: 0.5rem 0;
+}
+
+.bullet-list {
+  padding-left: 1.5rem;
+}
+
+.document-overview {
+  display: flex;
+  gap: 4rem;
+}
+
+.document-list li,
+.selected-documents li {
+  margin-bottom: 0.5rem;
+}
+
+.upload-area {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+
+  padding: 3rem 2rem;
+  border: 2px dashed #aaa;
+  border-radius: 8px;
+  text-align: center;
+}
+
+.upload-area input[type="file"] {
+  display: none;
+}
+
+.upload-label {
+  display: inline-block;
+  padding: 0.75rem 1.25rem;
+
+  border: 1px solid #555;
+  border-radius: 4px;
+
+  background-color: #555;
+  color: white;
+
+  cursor: pointer;
+}
+
+.upload-label:hover {
+  background-color: #333;
+}
+
+.upload-area .form-hint {
+  margin-top: 0.5rem;
+}
+
+.selected-documents {
+  margin-top: 2rem;
+}
+
 /* ---------------------------------------------- APPLICATION FORMS ---------------------------------------- */
 
 .application-form {
@@ -143,19 +227,22 @@ main {
   max-width: 1500px;
 }
 
-.document-upload-form {
+.case-number-form {
   max-width: 700px;
   margin: 2rem auto 0;
 }
 
-.document-upload-form .form-actions {
+.case-number-form .form-actions {
   margin-top: 2rem;
 }
 
-.document-upload-form .form-hint {
-  margin-top: 1.5rem;
+.form-hint {
   color: #666;
   font-size: 0.9rem;
+}
+
+.case-number-form .form-hint {
+  margin-top: 1.5rem;
 }
 
 .form-grid {
