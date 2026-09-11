@@ -1,0 +1,113 @@
+<!doctype html>
+<html lang="de">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="/src/styles/main.css" />
+    <title>Dokumente nachreichen</title>
+  </head>
+  <body>
+    <main>
+      <a href="document-upload-start.html">
+        Zurück zur Eingabe der Vorgangsnummer
+      </a>
+
+      <div class="content">
+        <section class="welcome-section">
+          <h1>Dokumente nachreichen</h1>
+          <p>Ergänzen Sie Ihren bestehenden Vorgang um weitere Dokumente.</p>
+        </section>
+
+        <section class="case-summary">
+          <h2>Vorgang wurde gefunden</h2>
+
+          <p>
+            <strong>Vorgangsnummer:</strong>
+            <span id="case-number-display">VG-2026-001284</span>
+          </p>
+
+          <p>
+            <strong>Vorgangsart:</strong>
+            <span id="case-type-display"> Schadens- oder Mängelmeldung </span>
+          </p>
+
+          <p>
+            <strong>Eingegangen am:</strong>
+            <span id="case-date-display">08.09.2026</span>
+          </p>
+
+          <p>
+            <strong>Status:</strong>
+            <span id="case-status-display">In Bearbeitung</span>
+          </p>
+        </section>
+
+        <div class="document-overview">
+          <section class="document-list required-documents-section">
+            <h2>Noch benötigte Dokumente</h2>
+
+            <ul class="bullet-list" id="required-documents-list">
+              <li>Nachweis der Bankverbindung</li>
+              <li>Aktueller Adressnachweis</li>
+            </ul>
+          </section>
+
+          <section class="document-list submitted-documents-section">
+            <h2>Bereits eingereichte Dokumente</h2>
+
+            <ul class="bullet-list" id="submitted-documents-list">
+              <li>Nachweis.pdf</li>
+              <li>Foto.jpg</li>
+            </ul>
+          </section>
+        </div>
+
+        <form
+          class="document-upload-form"
+          action="#"
+          method="post"
+          enctype="multipart/form-data"
+        >
+          <section class="upload-section">
+            <h2>Dokumente hinzufügen</h2>
+
+            <div class="upload-area">
+              <p>
+                Wählen Sie die Dateien aus, die Sie zu Ihrem Vorgang hinzufügen
+                möchten.
+              </p>
+
+              <label for="attachments" class="upload-label">
+                Dateien auswählen
+              </label>
+
+              <input
+                type="file"
+                id="attachments"
+                name="attachments"
+                multiple
+                accept=".pdf,.jpg,.jpeg,.png"
+                required
+              />
+
+              <p class="form-hint">Erlaubte Dateiformate: PDF, JPG und PNG.</p>
+            </div>
+          </section>
+
+          <section class="selected-documents">
+            <h2>Neu ausgewählte Dokumente</h2>
+
+            <p class="form-hint">Noch keine Dokumente ausgewählt.</p>
+
+            <ul class="bullet-list" id="selected-files-list"></ul>
+          </section>
+
+          <div class="form-actions">
+            <button type="submit">Dokumente einreichen</button>
+          </div>
+        </form>
+      </div>
+    </main>
+    <script src="/src/scripts/main.ts" type="module"></script>
+  </body>
+</html>
