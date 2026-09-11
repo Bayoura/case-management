@@ -143,6 +143,21 @@ main {
   max-width: 1500px;
 }
 
+.document-upload-form {
+  max-width: 700px;
+  margin: 2rem auto 0;
+}
+
+.document-upload-form .form-actions {
+  margin-top: 2rem;
+}
+
+.document-upload-form .form-hint {
+  margin-top: 1.5rem;
+  color: #666;
+  font-size: 0.9rem;
+}
+
 .form-grid {
   display: grid;
   grid-template-columns: 1fr 1fr;
