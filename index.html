@@ -43,7 +43,11 @@
               Dokumente.
             </p>
           </div>
-          <a href="#" class="card-button">Dokumente hochladen</a>
+          <a
+            href="/src/pages/service-portal/document-upload-start.html"
+            class="card-button"
+            >Dokumente hochladen</a
+          >
         </article>
         <article class="tracking-card card">
           <div class="card-content">
@@ -54,13 +58,18 @@
               weitere Informationen zu Ihrem Vorgang einzusehen.
             </p>
           </div>
-          <form class="tracking-form">
+          <form
+            class="tracking-form"
+            action="/src/pages/service-portal/case-status.html"
+            method="get"
+          >
             <label for="case-number">Vorgangsnummer:</label>
             <input
               type="text"
               id="case-number"
               name="case-number"
               placeholder="z. B. VG-2026-001284"
+              required
             />
             <button type="submit">Status anzeigen</button>
           </form>
