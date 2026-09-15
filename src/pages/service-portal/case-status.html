@@ -1,0 +1,124 @@
+<!doctype html>
+<html lang="de">
+  <head>
+    <title>Vorgang verfolgen</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="/src/styles/main.css" />
+  </head>
+
+  <body>
+    <main class="case-status-page">
+      <a href="/index.html"> ← Zurück zur Startseite </a>
+
+      <div class="content">
+        <section class="welcome-section">
+          <h1>Vorgang verfolgen</h1>
+          <p>
+            Hier können Sie den aktuellen Bearbeitungsstand Ihres Vorgangs
+            einsehen.
+          </p>
+        </section>
+
+        <section class="case-summary">
+          <h2>Vorgang</h2>
+
+          <p>
+            <strong>Vorgangsnummer: </strong>
+            <span id="case-number-display">VG-2026-001284</span>
+          </p>
+
+          <p>
+            <strong>Vorgangsart: </strong>
+            <span id="case-type-display"> Schadens- oder Mängelmeldung </span>
+          </p>
+
+          <p>
+            <strong>Eingereicht am: </strong>
+            <span id="case-date-display">08.09.2026</span>
+          </p>
+
+          <p>
+            <strong>Letzte Aktualisierung: </strong>
+            <span id="case-updated-display">10.09.2026, 09:15 Uhr</span>
+          </p>
+        </section>
+
+        <section class="current-status">
+          <h2>Aktueller Status</h2>
+
+          <p>
+            <strong id="case-status-display">In Bearbeitung</strong>
+          </p>
+
+          <p id="case-status-description">Ihr Vorgang wird derzeit geprüft.</p>
+
+          <p id="case-next-step" class="hint">
+            Keine weiteren Schritte erforderlich.
+          </p>
+        </section>
+
+        <section class="case-history">
+          <h2>Bearbeitungsverlauf</h2>
+
+          <ol id="case-history-list">
+            <li>
+              <strong>10.09.2026, 09:15 Uhr</strong>
+              <h3>Vorgang wird bearbeitet</h3>
+              <p>Die eingereichten Unterlagen werden geprüft.</p>
+            </li>
+            <li>
+              <strong>09.09.2026, 16:42 Uhr</strong>
+              <h3>Dokument eingegangen</h3>
+              <p>
+                Ein zusätzlich eingereichtes Dokument wurde dem Vorgang
+                zugeordnet.
+              </p>
+            </li>
+            <li>
+              <strong>08.09.2026, 14:32 Uhr</strong>
+              <h3>Vorgang eingegangen</h3>
+              <p>Der Vorgang wurde erfolgreich übermittelt.</p>
+            </li>
+          </ol>
+        </section>
+
+        <section class="submitted-documents">
+          <h2>Eingereichte Dokumente</h2>
+
+          <ul id="submitted-documents-list">
+            <li>
+              <span>Schadensnachweis.pdf</span>
+              <span>08.09.2026</span>
+            </li>
+
+            <li>
+              <span>Foto.jpg</span>
+              <span>08.09.2026</span>
+            </li>
+
+            <li>
+              <span>Kostenvoranschlag.pdf</span>
+              <span>10.09.2026</span>
+            </li>
+          </ul>
+        </section>
+      </div>
+      <div class="form-actions">
+        <a
+          href="/src/pages/service-portal/document-upload-start.html"
+          class="card-button"
+        >
+          Dokumente nachreichen
+        </a>
+      </div>
+    </main>
+
+    <script type="module" src="/src/scripts/main.ts"></script>
+  </body>
+</html>
+
+<!-- ich muss noch überlegen, ob man jetzt die email angeben muss, um dokumente anzugeben oder den status zu checken, oder nicht. es sollte konform sein.
+ ich könnte es auch so machen, dass man nur die vorgangsnummer eingibt um den status zu checken. aber wenn man tatsächlich weitere dokumente hochlädt, muss
+ man den upload erst noch bestätigen. man bekommt nach dem man submit gedrückt hat eine mail an die hinterlegte mail adresse und muss das darüber bestätigen
+ so kann kein anderer einfach irgendwas hochladen -->
