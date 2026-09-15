@@ -321,14 +321,14 @@ main {
   font-size: 1.1rem;
 }
 
-#submitted-documents-list {
+#submitted-documents-ul {
   display: flex;
   flex-direction: column;
   gap: 0.75rem;
   list-style: none;
 }
 
-#submitted-documents-list li {
+#submitted-documents-ul li {
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -339,7 +339,7 @@ main {
   background-color: #fff;
 }
 
-#submitted-documents-list li span:last-child {
+#submitted-documents-ul li span:last-child {
   color: #666;
   font-size: 0.9rem;
   white-space: nowrap;
@@ -368,7 +368,7 @@ main {
     left: -1.45rem;
   }
 
-  #submitted-documents-list li {
+  #submitted-documents-ul li {
     align-items: flex-start;
     flex-direction: column;
     gap: 0.25rem;
