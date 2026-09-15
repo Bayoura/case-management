@@ -27,6 +27,11 @@ button {
   font: inherit;
 }
 
+.hint {
+  color: #666;
+  font-size: 0.9rem;
+}
+
 /*--------------------------------------------------- HEADER --------------------------------------------- */
 
 header {
@@ -106,6 +111,7 @@ main {
 }
 
 .card-button {
+  display: inline-block;
   text-decoration: none;
   padding: 0.5rem 1rem;
   background-color: rgb(169, 169, 169);
@@ -143,7 +149,7 @@ main {
   margin: 0 auto;
   display: flex;
   flex-direction: column;
-  gap: 3rem;
+  gap: 2rem;
 }
 
 .case-summary {
@@ -211,12 +217,158 @@ main {
   background-color: #333;
 }
 
-.upload-area .form-hint {
+.upload-area .hint {
   margin-top: 0.5rem;
 }
 
 .selected-documents {
   margin-top: 2rem;
+}
+
+/* ------------------------------------------------- CASE STATUS --------------------------------------------- */
+
+.case-status-page {
+  gap: 1.5rem;
+}
+
+.current-status p {
+  margin: 0.5rem 0;
+}
+
+#case-status-display {
+  display: inline-block;
+
+  padding: 0.5rem 0.75rem;
+  border-radius: 999px;
+
+  background-color: #e8f1e8;
+  color: #245b2a;
+
+  font-weight: bold;
+}
+
+#case-status-description {
+  margin-top: 1rem;
+}
+
+#case-history-list {
+  position: relative;
+
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  margin: 0;
+  padding: 0 0 0 2rem;
+  list-style: none;
+}
+
+/* Vertikale Linie der Timeline */
+#case-history-list::before {
+  content: "";
+
+  position: absolute;
+  top: 0.5rem;
+  bottom: 0.5rem;
+  left: 0.45rem;
+
+  width: 2px;
+  background-color: #ccc;
+}
+
+#case-history-list li {
+  position: relative;
+
+  padding: 1rem 1.25rem;
+
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  background-color: #fff;
+}
+
+/* Punkt auf der Timeline */
+#case-history-list li::before {
+  content: "";
+
+  position: absolute;
+  top: 1.25rem;
+  left: -1.95rem;
+
+  width: 0.75rem;
+  height: 0.75rem;
+
+  border: 2px solid #fff;
+  border-radius: 50%;
+  background-color: #555;
+
+  box-shadow: 0 0 0 1px #aaa;
+}
+
+#case-history-list li strong {
+  display: block;
+
+  margin-bottom: 0.5rem;
+
+  color: #666;
+  font-size: 0.9rem;
+}
+
+#case-history-list li h3 {
+  margin: 0 0 0.5rem;
+  font-size: 1.1rem;
+}
+
+#submitted-documents-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  list-style: none;
+}
+
+#submitted-documents-list li {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  padding: 1rem 1.25rem;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  background-color: #fff;
+}
+
+#submitted-documents-list li span:last-child {
+  color: #666;
+  font-size: 0.9rem;
+  white-space: nowrap;
+}
+
+@media (max-width: 768px) {
+  .case-summary,
+  .current-status {
+    padding: 1rem;
+  }
+
+  .case-summary p {
+    flex-direction: column;
+    gap: 0.25rem;
+  }
+
+  .case-summary strong {
+    min-width: auto;
+  }
+
+  #case-history-list {
+    padding-left: 1.5rem;
+  }
+
+  #case-history-list li::before {
+    left: -1.45rem;
+  }
+
+  #submitted-documents-list li {
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 0.25rem;
+  }
 }
 
 /* ---------------------------------------------- APPLICATION FORMS ---------------------------------------- */
@@ -236,12 +388,7 @@ main {
   margin-top: 2rem;
 }
 
-.form-hint {
-  color: #666;
-  font-size: 0.9rem;
-}
-
-.case-number-form .form-hint {
+.case-number-form .hint {
   margin-top: 1.5rem;
 }
 
