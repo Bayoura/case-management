@@ -18,113 +18,117 @@ model Person {
   email          String
   customerNumber String?
 
-  cases          Case[]
+  cases Case[]
 
-  createdAt      DateTime @default(now())
-  updatedAt      DateTime @updatedAt
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
 }
 
 model Case {
-  id          Int        @id @default(autoincrement())
-  caseNumber  String     @unique
-  type        CaseType
-  status      CaseStatus
+  id         Int        @id @default(autoincrement())
+  caseNumber String     @unique
+  type       CaseType
+  status     CaseStatus
 
-  submittedAt DateTime   @default(now())
-  updatedAt   DateTime    @updatedAt
+  submittedAt DateTime @default(now())
+  updatedAt   DateTime @updatedAt
 
-  personId    Int
-  person      Person     @relation(fields: [personId], references: [id])
+  personId Int
+  person   Person @relation(fields: [personId], references: [id])
 
-  history     CaseHistoryEntry[]
-  documents   Document[]
+  history          CaseHistoryEntry[]
+  documents        Document[]
+  documentRequests DocumentRequest[]
 
-  dataChange  DataChangeRequest?
-  damageReport DamageReport?
+  dataChange     DataChangeRequest?
+  damageReport   DamageReport?
   generalInquiry GeneralInquiry?
+  Caseworker     Caseworker?        @relation(fields: [caseworkerId], references: [id])
+  caseworkerId   Int?
 }
 
 model DataChangeRequest {
-  id              Int      @id @default(autoincrement())
+  id Int @id @default(autoincrement())
 
-  changeType      DataChangeType
+  changeType DataChangeType
 
-  newStreet       String?
-  newHouseNumber  String?
-  newPostalCode   String?
-  newCity         String?
+  newStreet      String?
+  newHouseNumber String?
+  newPostalCode  String?
+  newCity        String?
 
-  newPhone        String?
-  newEmail        String?
+  newPhone String?
+  newEmail String?
 
-  newIban         String?
+  newIban String?
 
-  effectiveDate   DateTime?
+  effectiveDate DateTime?
 
-  caseId          Int      @unique
-  case            Case     @relation(fields: [caseId], references: [id])
+  caseId Int  @unique
+  case   Case @relation(fields: [caseId], references: [id])
 }
 
 enum DataChangeType {
   ADDRESS
   CONTACT
   BANK_DETAILS
+  OTHER
 }
 
 model DamageReport {
-  id              Int      @id @default(autoincrement())
+  id Int @id @default(autoincrement())
 
-  category        String
-  affectedItem    String?
-  incidentDate    DateTime?
-  description     String
+  category     String
+  affectedItem String?
+  incidentDate DateTime?
+  description  String
 
-  caseId          Int      @unique
-  case            Case     @relation(fields: [caseId], references: [id])
+  caseId Int  @unique
+  case   Case @relation(fields: [caseId], references: [id])
 }
 
 model GeneralInquiry {
-  id                  Int      @id @default(autoincrement())
+  id Int @id @default(autoincrement())
 
-  subject             String?
-  message             String
+  subject              String?
+  message              String
   referencedCaseNumber String?
 
-  caseId              Int      @unique
-  case                Case     @relation(fields: [caseId], references: [id])
+  caseId Int  @unique
+  case   Case @relation(fields: [caseId], references: [id])
 }
 
 model CaseHistoryEntry {
-  id          Int      @id @default(autoincrement())
-  createdAt   DateTime @default(now())
+  id        Int      @id @default(autoincrement())
+  createdAt DateTime @default(now())
 
   title       String
   description String?
 
-  caseId      Int
-  case        Case     @relation(fields: [caseId], references: [id])
+  caseId Int
+  case   Case @relation(fields: [caseId], references: [id])
 }
 
 model Document {
-  id         Int            @id @default(autoincrement())
+  id         Int      @id @default(autoincrement())
   fileName   String
   filePath   String
-  uploadedAt DateTime       @default(now())
+  uploadedAt DateTime @default(now())
 
-  status     DocumentStatus @default(SUBMITTED)
+  status DocumentStatus @default(SUBMITTED)
 
-  caseId     Int
-  case       Case           @relation(fields: [caseId], references: [id])
+  caseId Int
+  case   Case @relation(fields: [caseId], references: [id])
 }
 
 model DocumentRequest {
-  id           Int       @id @default(autoincrement())
-  description  String    // z. B. "Kontoauszug der letzten 3 Monate"
-  requestedAt  DateTime  @default(now())
-  fulfilledAt  DateTime? // vom Sachbearbeiter gesetzt, sobald geprüft und akzeptiert
+  id          Int       @id @default(autoincrement())
+  description String // z. B. "Kontoauszug der letzten 3 Monate"
+  requestedAt DateTime  @default(now())
+  fulfilledAt DateTime? // vom Sachbearbeiter gesetzt, sobald geprüft und akzeptiert
 
-  caseId       Int
-  case         Case      @relation(fields: [caseId], references: [id])
+  caseId Int
+  case   Case @relation(fields: [caseId], references: [id])
 
   caseworkerId Int?
   caseworker   Caseworker? @relation(fields: [caseworkerId], references: [id])
@@ -152,11 +156,12 @@ enum DocumentStatus {
 }
 
 model Caseworker {
-  id           Int    @id @default(autoincrement())
-  name         String
-  email        String @unique
-  passwordHash String
-  cases        Case[]
+  id               Int               @id @default(autoincrement())
+  name             String
+  email            String            @unique
+  passwordHash     String
+  cases            Case[]
+  documentRequests DocumentRequest[]
 }
 
 model ReferenceRecord {
