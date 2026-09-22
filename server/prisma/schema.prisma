@@ -2,11 +2,139 @@
 // learn more about it in the docs: https://pris.ly/d/prisma-schema
 
 generator client {
-  provider = "prisma-client"
-  output   = "../generated/prisma"
+  provider = "prisma-client-js"
 }
 
 datasource db {
   provider = "sqlite"
   url      = env("DATABASE_URL")
+}
+
+model Person {
+  id             Int      @id @default(autoincrement())
+  firstName      String
+  lastName       String
+  birthDate      DateTime
+  email          String
+  customerNumber String?
+
+  cases          Case[]
+
+  createdAt      DateTime @default(now())
+  updatedAt      DateTime @updatedAt
+}
+
+model Case {
+  id          Int        @id @default(autoincrement())
+  caseNumber  String     @unique
+  type        CaseType
+  status      CaseStatus
+
+  submittedAt DateTime   @default(now())
+  updatedAt   DateTime    @updatedAt
+
+  personId    Int
+  person      Person     @relation(fields: [personId], references: [id])
+
+  history     CaseHistoryEntry[]
+  documents   Document[]
+
+  dataChange  DataChangeRequest?
+  damageReport DamageReport?
+  generalInquiry GeneralInquiry?
+}
+
+model DataChangeRequest {
+  id              Int      @id @default(autoincrement())
+
+  changeType      DataChangeType
+
+  newStreet       String?
+  newHouseNumber  String?
+  newPostalCode   String?
+  newCity         String?
+
+  newPhone        String?
+  newEmail        String?
+
+  newIban         String?
+
+  effectiveDate   DateTime?
+
+  caseId          Int      @unique
+  case            Case     @relation(fields: [caseId], references: [id])
+}
+
+enum DataChangeType {
+  ADDRESS
+  CONTACT
+  BANK_DETAILS
+}
+
+model DamageReport {
+  id              Int      @id @default(autoincrement())
+
+  category        String
+  affectedItem    String?
+  incidentDate    DateTime?
+  description     String
+
+  caseId          Int      @unique
+  case            Case     @relation(fields: [caseId], references: [id])
+}
+
+model GeneralInquiry {
+  id                  Int      @id @default(autoincrement())
+
+  subject             String?
+  message             String
+  referencedCaseNumber String?
+
+  caseId              Int      @unique
+  case                Case     @relation(fields: [caseId], references: [id])
+}
+
+model CaseHistoryEntry {
+  id          Int      @id @default(autoincrement())
+  createdAt   DateTime @default(now())
+
+  title       String
+  description String?
+
+  caseId      Int
+  case        Case     @relation(fields: [caseId], references: [id])
+}
+
+model Document {
+  id         Int            @id @default(autoincrement())
+  fileName   String
+  filePath   String
+  uploadedAt DateTime       @default(now())
+
+  status     DocumentStatus @default(SUBMITTED)
+
+  caseId     Int
+  case       Case           @relation(fields: [caseId], references: [id])
+}
+
+enum CaseType {
+  DATA_CHANGE
+  DAMAGE_REPORT
+  GENERAL_INQUIRY
+}
+
+enum CaseStatus {
+  SUBMITTED
+  IN_REVIEW
+  WAITING_FOR_DOCUMENTS
+  IN_PROGRESS
+  COMPLETED
+  REJECTED
+}
+
+enum DocumentStatus {
+  SUBMITTED
+  REQUIRED
+  ACCEPTED
+  REJECTED
 }
